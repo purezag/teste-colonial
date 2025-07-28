@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100vh;
+    width: 100%;
+
+    background-image: radial-gradient(rgb(17, 17, 17), #000000);
+    
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    overflow: hidden;
+
+    
+
+    
+}
+
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    
+    & .bg {
+        width: 100%;
+        height: 100vh;
+        
+        position: absolute;
+        z-index: -1;
+
+        & img {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            background-size: cover;
+            
+            
+            opacity: .5;
+
+            &:hover {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            background-size: cover;
+            filter: blur(0);
+            opacity: .1;
+            }
+        }
+    }
+}
+
+
+
+.logo-bg {
+    width: 50%;
+    height: 100vh;
+    position: absolute;
+
+    top: 25%;
+    left: 25%;
+    
+    
+
+    & img {
+        opacity: .8;
+        transition: 1s;
+        width: 500px;
+        
+
+        &:hover {
+            transition: 1s;
+           transform: scale(1.1);
+        }
+    }
+}
+
+.bg-content {
+    width: 50%;
+    height: 100vh;
+
+    position: absolute;
+
+    top: 42%;
+    left: 55%;
+
+
+    & h1 {
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(270deg, #ffffff, rgb(223, 223, 223), #c5c5c5, transparent); /* degrade cíclico */
+        background-size: 1000% 800%; 
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: moveGradient 15s ease infinite;
+
+        pointer-events: none;
+        font-family: Inter;
+        font-size: 5rem;
+        line-height: 4rem;
+        color: rgb(0, 0, 0);
+        
+        
+    }
+}
+
+.buttons {
+    position: absolute;
+    text-decoration: none;
+
+
+    display: flex;
+    gap: 1rem;
+    top: 65%;
+    left: 55%;
+
+
+
+    & .btn {
+        border-radius: 30px;
+        height: 35px;
+        width: 80px;
+        cursor: pointer;
+        background-color: #ff5e00;
+        transition: .3s;
+        font-family: inter;
+        font-weight: bold;
+        font-size: .8rem;
+
+        &:hover {
+            background-color: #ff5e00;
+                        transition: .3s;
+                        transform: translatey(-5px);
+        }
+            & a {
+                height: 35px;
+                width: 80px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+
+                text-decoration: none;
+                color: rgb(255, 255, 255);
+                text-shadow: 1px 1px 5px rgba(0,0,0,.5);
+            }
+    }
+}
+
+
+@keyframes moveGradient {
+  10% {
+    background-position: 0% 50%;
+  }
+  80% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
