@@ -1035,7 +1035,7 @@ header {
 }
 
 .address-container img {
-    width: 30px;
+    width: 50px;
 }
 
 .address-container h1 {
@@ -1735,7 +1735,7 @@ header {
         }
 
         & img {
-            width: 30px;
+            width: 50px;
         }
     }
 
@@ -2103,7 +2103,7 @@ header {
         }
 
         & img {
-            width: 30px;
+            width: 50px;
         }
     }
 
