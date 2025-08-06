@@ -18,6 +18,7 @@ html {
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
+    font-family: 'Inter';
 }
 
 header {
@@ -449,6 +450,7 @@ header {
     width: 100%;
     min-height: 100vh;
     position: relative;
+    overflow: hidden;
 
     & .sell-title {
         background: linear-gradient(270deg, #ff5e00, rgb(223, 223, 223), #ff5e00, transparent); 
@@ -475,25 +477,27 @@ header {
 
     & .list {
         width: 100%;
-        height: 100%;
+        min-height: 100%;
         margin: auto;
-        position: relative;
+        position: absolute;
 
+        display: flex;
+        justify-content: center;
+        align-items: center;
         & .item {
             width: 100%;
+            min-height: 100vh;
             position: absolute;
-            top: 10%;
-            
             display: flex;
             justify-content: center;
             align-items: center;
             
-             & .maq-1 {
+            
+            
+            & .maq-1 {
                 position: absolute;
-                align-items: center;
                 width: 500px;
-                top: 15rem;
-                transform: translate(0);
+                
                 z-index: -1;               
 
                 & img {
@@ -501,115 +505,90 @@ header {
                     transform: rotate(-5deg);
                 }
 
-                &::before {
+                /* &::before {
                     content: '';
                     position: absolute;
                     background-color: #000;
                     width: 100%;
                     height: 100px;
                     top: 120%;
-                    left: 50px;
+                    
                     border: 50%;
                     filter: blur(50px);
                     opacity: .8; 
                     z-index: 3;
                     
-               }
-             }
-
-                  
-                & .photos {
-                    width: 100px;
-                    position: absolute;                 
-                    top: 75%;
-                    left: 10%;
-                    transform: translateY(-50%);
-                    display: flex;
-                    gap: 1rem;
-                    opacity: .8;
-                    cursor: pointer;
-                    
-
-                & img {
-                    width: 100%;
-                    border-radius: 5px;
-                    filter: grayscale(100%);
-                    transition: .5s;
-
-                    &:hover {
-                        filter: grayscale(0);
-                        transform: scale(1.05) rotate(-3deg);
-                    }
-                }
-                
-                
-                
+               } */
             }
         
+            
             & .contact-seller {
-                       
-                           position: absolute;
-                           inset: 0;
-                           width: 100%;
-                           height: 100vh;
-                           
-                           display: flex;
-                            justify-content: center;
-                            align-items: end;
-                            padding-bottom: 15rem;
-                                       
-                           border-radius: 30px;
-                           border: none;
-                           
-                           
-                                         
-        
-                           & button {
-                               cursor: pointer;
-                               align-items: center;
-                               
-                               z-index: 9999;
-                               border-radius: 30px;
-                               height: 35px;
-                               width: 120px;
-                               border: none;
-                               color: #000000;
-                               cursor: pointer;
-                               background-color: #ff5e00;
-                               font-style: italic;
-                               transition: .3s;
-        
-                               & strong {
-                                   font-weight: 900;
-                                   font-style: normal;
-                               }
-                               
-                               &:hover {
+                                
+                                   position: absolute;
+                                   inset: 0;
                                    
-                                   transition: .3s;
-                                   transform: translatey(-5px);
-                                            
+                                   height: 100vh;
+                                   
+                                   display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    top: 35%;
+                                    z-index: 1;
+                                    
+                                   
+            
+                                   & button {
+                                        position: absolute;
+                                        z-index: 999;
+                                       cursor: pointer;
+                                       align-items: center;
+                                       
+                            
+                                       border-radius: 30px;
+                                       height: 35px;
+                                       width: 120px;
+                                       border: none;
+                                       color: #000000;
+                                       cursor: pointer;
+                                       background-color: #ff5e00;
+                                       font-style: italic;
+                                       transition: .3s;
+                
+                                       & strong {
+                                           font-weight: 900;
+                                           font-style: normal;
+                                       }
+                                       
+                                       &:hover {
+                                           
+                                           transition: .3s;
+                                           transform: translatey(-5px);
+                                                    
+                                       }
+                                   }        
                                }
-                           }        
-                       }
-    }
 
-    }
-
+    }        
+    
+    
+}    
 
     .arrows {
-        width: 50%;
+        width: 100%;
         position: absolute;
-        z-index: 999;
         top: 50%;
-        left: 50%;
-        transform: translate(-50%);
+        padding-left: 15rem;
+        padding-right: 15rem;
         display: flex;
-        justify-content: space-between;       
+        justify-content: space-between;    
+        align-items: center;
+        
+        
+           
         
         & button {
             
-            top: 60%;
+            
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -643,6 +622,7 @@ header {
         --calculation: 1;
 
         & .item {
+            
             transform: translateX(-100%);
             transition: .5s;
             opacity: 0;
@@ -1669,48 +1649,48 @@ header {
         
         & .list {       
        
-        & .item {
+            & .item {
                         
-            & .maq-1 {
-                width: 400px;
-                top: 19rem;
-
-                & img {
-                    width: 100%;                    
-                }                
-            }
-        }
-
-        & .active {
-            transform: translateX(0);
-            transition: .5s;
-            opacity: 1;
-
-             & .maq-1 {
+                & .maq-1 {
                 
-                & img {
-                    transform: rotate(-5deg);
+                    width: 400px;
+                
+
+                    & img {
+                        width: 100%;                    
+                    }                
                 }
-
-                
             }
 
+            & .active {
+                transform: translateX(0);
+                transition: .5s;
+                opacity: 1;
+
+                & .maq-1 {
+                
+                    & img {
+                        transform: rotate(-5deg);
+                    }
+                }
+            }
+
+            & .contact-seller {
+                
+                #contact-seller, #contact-seller-2, #contact-seller-3 {
+                    top: 30%;
+                    font-size: 1rem;
+                    height: 35px;
+                    width: 200px;
+                }        
+            }
         }
+        
+        .arrows {
+             padding-left: 10rem;
+        padding-right: 10rem;
+        width: 100%;
 
-        & .contact-seller {
-           
-            & button {
-                               height: 35px;
-                               width: 120px;
-                           }        
-                       }
-
-    }
-
-     .arrows {
-        width: 80%;
-         
-        padding: 3rem;   
             & button {
                 width: 50px;
                 height: 50px;
@@ -2024,10 +2004,9 @@ header {
         & .list {       
        
         & .item {
-                        
+                      
             & .maq-1 {
-                width: 250px;
-                top: 25rem;
+                width: 300px;
 
                 & img {
                     width: 100%;                    
@@ -2063,20 +2042,23 @@ header {
 
         & .contact-seller {
            
-            & button {
-                               
-                               height: 35px;
-                               width: 120px;
-                           }        
+            #contact-seller, #contact-seller-2, #contact-seller-3 {
+                    top: 35%;
+                    font-size: .8rem;
+                    height: 35px;
+                    width: 120px;
+                }         
                        }
 
     }
 
      .arrows {
+        padding-left: 3rem;
+        padding-right: 3rem;
         width: 100%;
-         
-        padding: 3rem;   
+
             & button {
+                
                 width: 30px;
                 height: 30px;
 
@@ -2092,7 +2074,7 @@ header {
     .container {
         
        &  .sell-title {
-        top: 10rem;
+        
        
         font-size: 2rem;
         
