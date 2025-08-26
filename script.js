@@ -51,7 +51,7 @@ const images = document.querySelectorAll('.photos img', '.photos-store img');
 
   let currentIndex = 0;
 
-  // Abrir o lightbox
+  
   images.forEach((img, index) => {
     img.addEventListener('click', () => {
       lightboxImg.src = img.src;
@@ -60,20 +60,20 @@ const images = document.querySelectorAll('.photos img', '.photos-store img');
     });
   });
 
-  // Fechar o lightbox
+  
   closeBtn.addEventListener('click', () => {
     lightbox.classList.remove('show');
   });
 
  function changeImage(index) {
-  lightboxImg.style.opacity = 0; // Esconde suavemente
+  lightboxImg.style.opacity = 0;
 
   setTimeout(() => {
-    lightboxImg.src = images[index].src; // Troca a imagem
+    lightboxImg.src = images[index].src; 
     lightboxImg.onload = () => {
-      lightboxImg.style.opacity = 1; // Mostra suavemente após carregar
+      lightboxImg.style.opacity = 1; 
     };
-  }, 300); // tempo deve ser um pouco menor que o transition do CSS
+  }, 300); 
 }
 
 nextBtn.addEventListener('click', () => {
@@ -112,7 +112,7 @@ window.addEventListener("scroll", () => {
 
   const allStores = ['store', 'store-2', 'store-3'].map(id => document.getElementById(id));
 
-  // Funções de animação
+ 
   function fadeOutSections(sections) {
     sections.forEach(section => {
       section.classList.remove('visible');
@@ -131,7 +131,7 @@ window.addEventListener("scroll", () => {
     }, 10);
   }
 
-  // Abre qualquer loja com base no ID
+  
   function openStore(storeId) {
     const store = document.getElementById(storeId);
     fadeOutSections(siteSections);
@@ -139,7 +139,7 @@ window.addEventListener("scroll", () => {
     window.scrollTo(0, 0);
   }
 
-  // Fecha todas as lojas e volta ao site
+  
   function closeAllStores() {
     allStores.forEach(store => {
       store.classList.remove('visible');
@@ -160,12 +160,12 @@ window.addEventListener("scroll", () => {
     document.getElementById('container').scrollIntoView({ behavior: 'smooth' });
   }
 
-  // Eventos de clique para todos os botões
+  
   document.getElementById('contact-seller').addEventListener('click', () => openStore('store'));
   document.getElementById('contact-seller-2').addEventListener('click', () => openStore('store-2'));
   document.getElementById('contact-seller-3').addEventListener('click', () => openStore('store-3'));
 
-  // Todos os botões de voltar com mesma classe
+ 
   document.querySelectorAll('.go-back').forEach(button => {
     button.addEventListener('click', closeAllStores);
   });
